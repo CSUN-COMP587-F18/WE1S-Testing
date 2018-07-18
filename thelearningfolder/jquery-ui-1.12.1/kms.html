@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#cereal").click(function(){
+    	var store = "";
+        var x = $("form").serializeArray();
+        $.each(x, function(i, field){
+           store = store +" " + field.value;
+        });
+        document.getElementById("demo").innerHTML = store;
+        console.log(store);
+    });
+});
+</script>
+</head>
+<body>
+<p>What Will be Submitted Is: <span id="demo"></span></p>
+
+<form action="">
+  Beginning Date <input type="text" name="bDate" value="Test Value1"><br>
+  Ending Date: <input type="text" name="eDate" value="Value2"><br>
+</form>
+
+<button id="cereal">Serialize form values</button>
+
+<div id="results"></div>
+
+</body>
