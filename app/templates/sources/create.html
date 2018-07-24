@@ -57,7 +57,44 @@
             {% elif opt.fieldtype == 'textarea' %}
             <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
             <div class="col-sm-10">
-              <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>   
+            <!-- athors field -->
+            {% if opt.name == 'authors' %}
+              <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+              <div>
+              <div id="aform">
+                  <fieldset class="author_field">      
+                  </fieldset> 
+                </div>
+                <button id="add_author" class="btn remove btn-lg btn-outline-editorial">+</button>
+                <button id="author_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              </div>
+            <!-- note field -->
+            {% elif opt.name == 'notes' %}
+              <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+              <div>
+              <div id="nform">
+                  <fieldset class="note_field">      
+                  </fieldset> 
+                </div>
+                <button id="add_note" class="btn remove btn-lg btn-outline-editorial">+</button>
+                <button id="note_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              </div>
+            <!-- note field end -->
+            <!-- keyword field -->
+            {% elif opt.name == 'keywords' %}
+              <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+              <div>
+              <div id="kform">
+                  <fieldset class="keyword_field">      
+                  </fieldset> 
+                </div>
+                <button id="add_keyword" class="btn remove btn-lg btn-outline-editorial">+</button>
+                <button id="keyword_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              </div>
+            <!-- keyword field end -->
+            {% else %}
+                <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+            {% endif %}
             </div>
             {% elif opt.fieldtype == 'select' %}
             <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
@@ -88,4 +125,104 @@
     <button id="hide" class="btn btn-lg btn-outline-editorial">Hide</button>
     <pre id="manifest"></pre>
 </div>
+<!-- jquerycode to add delete forms and input them in the hidden form -->
+<!-- make the scipt offial and shit -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> </script>
+<script>
+    // authorsjs start
+    $("#author_serialize").click(function(){
+      var store = "";
+        var x = $('#aform :input').serializeArray();
+        console.log(x)
+        $.each(x, function(i, field){
+          if (i==x.length-1) {
+            store = store + field.value
+          } else{
+            store = store + field.value + "\r";
+          }
+        });
+        document.getElementById("authors").value = store;
+        $('#aform').parent().remove();
+        $("#authors").show();
+        alert("Your field has have been submitted!");
+        console.log(store);
+    });
+
+
+    $('#add_author').on('click', function() { 
+        $('.author_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
+      
+        return false; //prevent form submission
+    });
+
+    $('.author_field').on('click', '.remove', function() {
+        $(this).parent().remove();
+        return false; //prevent form submission
+    });
+
+    // keywordjs start
+    $("#keyword_serialize").click(function(){
+      var store = "";
+        var x = $('#kform :input').serializeArray();
+        console.log(x)
+        $.each(x, function(i, field){
+          if (i==x.length-1) {
+            store = store + field.value
+          } else{
+            store = store + field.value + "\r";
+          }
+        });
+        document.getElementById("keywords").value = store;
+        $('#kform').parent().remove();
+        $("#keywords").show();
+        alert("Your field has have been submitted!");
+        console.log(store);
+    });
+
+
+    $('#add_keyword').on('click', function() { 
+        $('.keyword_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
+      
+        return false; //prevent form submission
+    });
+
+    $('.keyword_field').on('click', '.remove', function() {
+        $(this).parent().remove();
+        return false; //prevent form submission
+    });
+
+    // notejs start
+
+
+    $("#note_serialize").click(function(){
+      var store = "";
+        var x = $('#nform :input').serializeArray();
+        console.log(x)
+        $.each(x, function(i, field){
+          if (i==x.length-1) {
+            store = store + field.value
+          } else{
+            store = store + field.value + "\r";
+          }
+        });
+        document.getElementById("notes").value = store;
+        $('#nform').parent().remove();
+        $("#notes").show();
+        alert("Your field has have been submitted!");
+        console.log(store);
+    });
+
+
+    $('#add_note').on('click', function() { 
+        $('.note_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
+      
+        return false; //prevent form submission
+    });
+
+    $('.note_field').on('click', '.remove', function() {
+        $(this).parent().remove();
+        return false; //prevent form submission
+    });
+
+</script>
 {% endblock main %}
