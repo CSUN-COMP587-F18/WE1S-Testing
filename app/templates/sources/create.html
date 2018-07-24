@@ -1,47 +1,5 @@
 {% extends "base.html" %}
 {% block main %}
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-    
-    $(document).ready(function(){
-        $("#cereal").click(function(){
-          var store = "";
-            var x = $("#aform").serializeArray();
-            $.each(x, function(i, field){
-               store = store +"" + field.value + "\n";
-            });
-            document.getElementById("demo").innerHTML = store;
-            console.log(store);
-        });
-    });
-    //Clone and Remove Form Fields
-    $('#add_author').on('click', function() { 
-        $('#authors').append('<div class="author"><input type="text" name="author[]"><button class="remove">x</button></div>');
-        var dataArray = $('#aform').serializeArray()
-        console.log(dataArray)
-        dataObj = {};
-      $(dataArray).each(function(i, field){
-        dataObj[field.name] = field.value;
-      });
-      console.log(dataObj['author[]']);       
-        return false; //prevent form submission
-    });
-
-    $('#authors').on('click', '.remove', function() {
-        $(this).parent().remove();
-        return false; //prevent form submission
-    }); 
-
-
-  </script>
-  <script>
-  $( function() {
-    $( ".datepicker" ).datepicker();
-  } );
-  </script> 
 <form method="POST">
 <br>
 <div class="row">
@@ -94,27 +52,7 @@
             {% if opt.fieldtype == 'text' %}
             <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
             <div class="col-sm-10">
-                  {% if opt.name == 'date' %}
-                 <input name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" type="text" {% if opt.value %}value="{{ opt.value|safe }}"{% endif %} class="form-control datepicker" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>
-                  {% else %}
                 <input name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" type="text" {% if opt.value %}value="{{ opt.value|safe }}"{% endif %} class="form-control" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>
-                {% endif %}
-                {% if opt.name == 'authors' %}
-
-    <label>authors</label>
-    <p>What Will be Submitted Is: <span id="demo"></span></p>
-  <form method="post" action="#" id="aform">
-      <fieldset id="authors">
-          <div class="author">
-              <input type="text" name="author[]"><button class="remove">x</button>
-          </div>
-      </fieldset> 
-              
-      <button id="add_author">add author</button>
-      
-  </form>
-  <button id="cereal">Serialize form values</button>
-                {% endif %}
             </div>
             {% elif opt.fieldtype == 'textarea' %}
             <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
