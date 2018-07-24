@@ -48,7 +48,19 @@
                   {% elif opt.fieldtype == 'textarea' %}
                   <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
                   <div class="col-sm-10">
+                    {% if opt.name == 'contributors' %}
+                    <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                    <div>
+                    <div id="cform">
+                        <fieldset class="contributor_field">      
+                        </fieldset> 
+                      </div>
+                      <button id="add_contributor" class="btn remove btn-lg btn-outline-editorial">+</button>
+                      <button id="contributor_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                    </div>
+                    {% else %}
                     <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>   
+                    {% endif %}
                   </div>
                   {% endif %}
                 </div> 
@@ -127,7 +139,39 @@
                 {% elif opt.fieldtype == 'textarea' %}
                 <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
                 <div class="col-sm-10">
-                  <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>   
+                  {% if opt.name == 'notes' %}
+                  <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                  <div>
+                  <div id="nform">
+                      <fieldset class="note_field">      
+                      </fieldset> 
+                    </div>
+                    <button id="add_note" class="btn remove btn-lg btn-outline-editorial">+</button>
+                    <button id="note_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                  </div>
+                  {% elif opt.name == 'keywords' %}
+                  <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                  <div>
+                  <div id="kform">
+                      <fieldset class="keyword_field">      
+                      </fieldset> 
+                    </div>
+                    <button id="add_keyword" class="btn remove btn-lg btn-outline-editorial">+</button>
+                    <button id="keyword_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                  </div>
+                  {% elif opt.name == 'licenses' %}
+                  <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                  <div>
+                  <div id="lform">
+                      <fieldset class="license_field">      
+                      </fieldset> 
+                    </div>
+                    <button id="add_license" class="btn remove btn-lg btn-outline-editorial">+</button>
+                    <button id="license_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                  </div> 
+                  {% else %}
+                  <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                  {% endif %}   
                 </div>
                 {% endif %}
               </div> 
@@ -171,5 +215,135 @@
         {% endfor %}
       </div> <!-- /tab-pane -->
   </div> <!-- /scriptForm -->
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> </script>
+<script>
+    // licencesjs start
+    $("#license_serialize").click(function(){
+      var store = "";
+        var x = $('#lform :input').serializeArray();
+        console.log(x)
+        $.each(x, function(i, field){
+          if (i==x.length-1) {
+            store = store + field.value
+          } else{
+            store = store + field.value + "\r";
+          }
+        });
+        document.getElementById("licenses").value = store;
+        $('#lform').parent().remove();
+        $("#licenses").show();
+        alert("Your field has have been submitted!");
+        console.log(store);
+    });
+
+
+    $('#add_license').on('click', function() { 
+        $('.license_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
+      
+        return false; //prevent form submission
+    });
+
+    $('.license_field').on('click', '.remove', function() {
+        $(this).parent().remove();
+        return false; //prevent form submission
+    });
+
+        // contributorsjs start
+    $("#contributor_serialize").click(function(){
+      var store = "";
+        var x = $('#cform :input').serializeArray();
+        console.log(x)
+        $.each(x, function(i, field){
+          if (i==x.length-1) {
+            store = store + field.value
+          } else{
+            store = store + field.value + "\r";
+          }
+        });
+        document.getElementById("contributors").value = store;
+        $('#cform').parent().remove();
+        $("#contributors").show();
+        alert("Your field has have been submitted!");
+        console.log(store);
+    });
+
+
+    $('#add_contributor').on('click', function() { 
+        $('.contributor_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
+      
+        return false; //prevent form submission
+    });
+
+    $('.contributor_field').on('click', '.remove', function() {
+        $(this).parent().remove();
+        return false; //prevent form submission
+    });
+
+
+    // keywordjs start
+    $("#keyword_serialize").click(function(){
+      var store = "";
+        var x = $('#kform :input').serializeArray();
+        console.log(x)
+        $.each(x, function(i, field){
+          if (i==x.length-1) {
+            store = store + field.value
+          } else{
+            store = store + field.value + "\r";
+          }
+        });
+        document.getElementById("keywords").value = store;
+        $('#kform').parent().remove();
+        $("#keywords").show();
+        alert("Your field has have been submitted!");
+        console.log(store);
+    });
+
+
+    $('#add_keyword').on('click', function() { 
+        $('.keyword_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
+      
+        return false; //prevent form submission
+    });
+
+    $('.keyword_field').on('click', '.remove', function() {
+        $(this).parent().remove();
+        return false; //prevent form submission
+    });
+
+    // notejs start
+
+
+    $("#note_serialize").click(function(){
+      var store = "";
+        var x = $('#nform :input').serializeArray();
+        console.log(x)
+        $.each(x, function(i, field){
+          if (i==x.length-1) {
+            store = store + field.value
+          } else{
+            store = store + field.value + "\r";
+          }
+        });
+        document.getElementById("notes").value = store;
+        $('#nform').parent().remove();
+        $("#notes").show();
+        alert("Your field has have been submitted!");
+        console.log(store);
+    });
+
+
+    $('#add_note').on('click', function() { 
+        $('.note_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
+      
+        return false; //prevent form submission
+    });
+
+    $('.note_field').on('click', '.remove', function() {
+        $(this).parent().remove();
+        return false; //prevent form submission
+    });
+
 </script>
 {% endblock main %}
