@@ -65,8 +65,8 @@
                   <fieldset class="author_field">      
                   </fieldset> 
                 </div>
-                <button id="add_author" class="btn remove btn-lg btn-outline-editorial">+</button>
-                <button id="author_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                <button id="add_author" class="btn btn-lg btn-outline-editorial">+</button>
+                <button id="author_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
               </div>
             <!-- note field -->
             {% elif opt.name == 'notes' %}
@@ -76,8 +76,8 @@
                   <fieldset class="note_field">      
                   </fieldset> 
                 </div>
-                <button id="add_note" class="btn remove btn-lg btn-outline-editorial">+</button>
-                <button id="note_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                <button id="add_note" class="btn btn-lg btn-outline-editorial">+</button>
+                <button id="note_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
               </div>
             <!-- note field end -->
             <!-- keyword field -->
@@ -88,8 +88,8 @@
                   <fieldset class="keyword_field">      
                   </fieldset> 
                 </div>
-                <button id="add_keyword" class="btn remove btn-lg btn-outline-editorial">+</button>
-                <button id="keyword_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                <button id="add_keyword" class="btn btn-lg btn-outline-editorial">+</button>
+                <button id="keyword_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
               </div>
             <!-- keyword field end -->
             {% else %}
@@ -130,7 +130,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> </script>
 <script>
     // authorsjs start
-    $("#author_serialize").click(function(){
+    $(document).on('click', '#author_serialize', function(){
       var store = "";
         var x = $('#aform :input').serializeArray();
         console.log(x)
@@ -149,19 +149,19 @@
     });
 
 
-    $('#add_author').on('click', function() { 
+    $(document).on('click', '#add_author', function(){
         $('.author_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.author_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
 
     // keywordjs start
-    $("#keyword_serialize").click(function(){
+    $(document).on('click', '#keyword_serialize', function(){
       var store = "";
         var x = $('#kform :input').serializeArray();
         console.log(x)
@@ -180,13 +180,13 @@
     });
 
 
-    $('#add_keyword').on('click', function() { 
+    $(document).on('click', '#add_keyword', function(){
         $('.keyword_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.keyword_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
@@ -194,7 +194,7 @@
     // notejs start
 
 
-    $("#note_serialize").click(function(){
+    $(document).on('click', '#note_serialize', function(){
       var store = "";
         var x = $('#nform :input').serializeArray();
         console.log(x)
@@ -213,13 +213,13 @@
     });
 
 
-    $('#add_note').on('click', function() { 
+    $(document).on('click', '#add_note', function(){
         $('.note_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.note_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
