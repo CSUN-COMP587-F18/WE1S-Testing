@@ -83,8 +83,8 @@
                         <fieldset class="source_field">      
                         </fieldset> 
                       </div>
-                      <button id="add_source" class="btn remove btn-lg btn-outline-editorial">+</button>
-                      <button id="source_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                      <button id="add_source" class="btn btn-lg btn-outline-editorial">+</button>
+                      <button id="source_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
                     </div> 
                     {% elif opt.name == 'contributors' %}
                     <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea> 
@@ -93,8 +93,8 @@
                         <fieldset class="contributor_field">      
                         </fieldset> 
                       </div>
-                      <button id="add_contributor" class="btn remove btn-lg btn-outline-editorial">+</button>
-                      <button id="contributor_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                      <button id="add_contributor" class="btn btn-lg btn-outline-editorial">+</button>
+                      <button id="contributor_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
                     </div>
                     {% else %}
                     <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea> 
@@ -124,8 +124,8 @@
                       <fieldset class="note_field">      
                       </fieldset> 
                     </div>
-                    <button id="add_note" class="btn remove btn-lg btn-outline-editorial">+</button>
-                    <button id="note_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                    <button id="add_note" class="btn btn-lg btn-outline-editorial">+</button>
+                    <button id="note_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
                   </div>
                   {% elif opt.name == 'queryterms' %}
                   <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -134,8 +134,8 @@
                       <fieldset class="queryterm_field">      
                       </fieldset> 
                     </div>
-                    <button id="add_queryterm" class="btn remove btn-lg btn-outline-editorial">+</button>
-                    <button id="queryterm_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                    <button id="add_queryterm" class="btn btn-lg btn-outline-editorial">+</button>
+                    <button id="queryterm_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
                   </div>
                   {% elif opt.name == 'processes' %}
                   <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -144,8 +144,8 @@
                       <fieldset class="processes_field">      
                       </fieldset> 
                     </div>
-                    <button id="add_processes" class="btn remove btn-lg btn-outline-editorial">+</button>
-                    <button id="processes_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                    <button id="add_processes" class="btn btn-lg btn-outline-editorial">+</button>
+                    <button id="processes_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
                   </div>
                   {% elif opt.name == 'keywords' %}
                   <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -154,8 +154,8 @@
                       <fieldset class="keyword_field">      
                       </fieldset> 
                     </div>
-                    <button id="add_keyword" class="btn remove btn-lg btn-outline-editorial">+</button>
-                    <button id="keyword_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                    <button id="add_keyword" class="btn btn-lg btn-outline-editorial">+</button>
+                    <button id="keyword_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
                   </div>
                   {% elif opt.name == 'licenses' %}
                   <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -164,8 +164,8 @@
                       <fieldset class="license_field">      
                       </fieldset> 
                     </div>
-                    <button id="add_license" class="btn remove btn-lg btn-outline-editorial">+</button>
-                    <button id="license_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+                    <button id="add_license" class="btn btn-lg btn-outline-editorial">+</button>
+                    <button id="license_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
                   </div> 
                   {% else %}
                   <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -213,8 +213,8 @@
                 <fieldset class="source_field">      
                 </fieldset> 
               </div>
-              <button id="add_source" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="source_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_source" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="source_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div> 
             {% elif opt.name == 'contributors' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea> 
@@ -223,8 +223,8 @@
                 <fieldset class="contributor_field">      
                 </fieldset> 
               </div>
-              <button id="add_contributor" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="contributor_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_contributor" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="contributor_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% else %}
             <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea> 
@@ -254,8 +254,8 @@
                 <fieldset class="note_field">      
                 </fieldset> 
               </div>
-              <button id="add_note" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="note_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_note" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="note_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% elif opt.name == 'queryterms' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -264,8 +264,8 @@
                 <fieldset class="queryterm_field">      
                 </fieldset> 
               </div>
-              <button id="add_queryterm" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="queryterm_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_queryterm" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="queryterm_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% elif opt.name == 'processes' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -274,8 +274,8 @@
                 <fieldset class="processes_field">      
                 </fieldset> 
               </div>
-              <button id="add_processes" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="processes_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_processes" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="processes_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% elif opt.name == 'keywords' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -284,8 +284,8 @@
                 <fieldset class="keyword_field">      
                 </fieldset> 
               </div>
-              <button id="add_keyword" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="keyword_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_keyword" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="keyword_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% elif opt.name == 'licenses' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -294,8 +294,8 @@
                 <fieldset class="license_field">      
                 </fieldset> 
               </div>
-              <button id="add_license" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="license_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_license" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="license_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div> 
             {% else %}
             <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -345,15 +345,16 @@
         </div>
         {% elif opt.fieldtype == 'textarea' %}
         <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
-        <div class="col-sm-10">            {% if opt.name == 'notes' %}
+        <div class="col-sm-10">            
+          {% if opt.name == 'notes' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
             <div>
             <div id="nform">
                 <fieldset class="note_field">      
                 </fieldset> 
               </div>
-              <button id="add_note" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="note_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_note" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="note_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% elif opt.name == 'relationships' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -362,8 +363,8 @@
                 <fieldset class="relationships_field">      
                 </fieldset> 
               </div>
-              <button id="add_relationships" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="relationships_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_relationships" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="relationships_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% elif opt.name == 'processes' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -372,8 +373,8 @@
                 <fieldset class="processes_field">      
                 </fieldset> 
               </div>
-              <button id="add_processes" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="processes_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_processes" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="processes_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% elif opt.name == 'keywords' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -382,8 +383,8 @@
                 <fieldset class="keyword_field">      
                 </fieldset> 
               </div>
-              <button id="add_keyword" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="keyword_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_keyword" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="keyword_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div>
             {% elif opt.name == 'licenses' %}
             <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -392,8 +393,8 @@
                 <fieldset class="license_field">      
                 </fieldset> 
               </div>
-              <button id="add_license" class="btn remove btn-lg btn-outline-editorial">+</button>
-              <button id="license_serialize" class="btn remove btn-lg btn-outline-editorial">Submit</button>
+              <button id="add_license" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="license_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
             </div> 
             {% else %}
             <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
@@ -429,7 +430,19 @@
           {% elif opt.fieldtype == 'textarea' %}
           <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
           <div class="col-sm-10">
+            {% if opt.name == 'processes' %}
+            <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+            <div>
+            <div id="nform">
+                <fieldset class="note_field">      
+                </fieldset> 
+              </div>
+              <button id="add_note" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="note_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
+            </div>
+            {% else %}
             <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+            {% endif %} 
           </div>
           {% endif %}
         </div> 
@@ -448,7 +461,29 @@
         {% elif opt.fieldtype == 'textarea' %}
         <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
         <div class="col-sm-10">
-          <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+            {% if opt.name == 'notes' %}
+            <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+            <div>
+            <div id="nform">
+                <fieldset class="note_field">      
+                </fieldset> 
+              </div>
+              <button id="add_note" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="note_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
+            </div>
+            {% elif opt.name == 'keywords' %}
+            <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+            <div>
+            <div id="kform">
+                <fieldset class="keyword_field">      
+                </fieldset> 
+              </div>
+              <button id="add_keyword" class="btn btn-lg btn-outline-editorial">+</button>
+              <button id="keyword_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
+            </div>
+            {% else %}
+            <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+            {% endif %} 
         </div>
         {% endif %}
       </div> 
@@ -495,7 +530,29 @@
                 {% elif opt.fieldtype == 'textarea' %}
                 <label class="col-sm-2 col-form-label" for="{{ opt.name|safe }}">{{ opt.name|safe }}</label>
                 <div class="col-sm-10">
-                  <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>   
+                {% if opt.name == 'notes' %}
+                <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                <div>
+                <div id="nform">
+                    <fieldset class="note_field">      
+                    </fieldset> 
+                  </div>
+                  <button id="add_note" class="btn btn-lg btn-outline-editorial">+</button>
+                  <button id="note_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
+                </div>
+                {% elif opt.name == 'keywords' %}
+                <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                <div>
+                <div id="kform">
+                    <fieldset class="keyword_field">      
+                    </fieldset> 
+                  </div>
+                  <button id="add_keyword" class="btn btn-lg btn-outline-editorial">+</button>
+                  <button id="keyword_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
+                </div>
+                {% else %}
+                <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                {% endif %} 
                 </div>
                 {% endif %}
               </div> 
@@ -536,7 +593,29 @@
                 {% if opt.fieldtype == 'text' %}
                 <input name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" type="text" placeholder="{{ opt.placeholder|safe or '' }}" {% if opt.value %}value="{{ opt.value|safe }}"{% endif %} class="form-control" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>
                 {% elif opt.fieldtype == 'textarea' %}
-                <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>   
+                {% if opt.name == 'notes' %}
+                <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                <div>
+                <div id="nform">
+                    <fieldset class="note_field">      
+                    </fieldset> 
+                  </div>
+                  <button id="add_note" class="btn btn-lg btn-outline-editorial">+</button>
+                  <button id="note_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
+                </div>
+                {% elif opt.name == 'keywords' %}
+                <textarea style="display:none" name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                <div>
+                <div id="kform">
+                    <fieldset class="keyword_field">      
+                    </fieldset> 
+                  </div>
+                  <button id="add_keyword" class="btn btn-lg btn-outline-editorial">+</button>
+                  <button id="keyword_serialize" class="btn btn-lg btn-outline-editorial">Submit</button>
+                </div>
+                {% else %}
+                <textarea name="{{ opt.name|safe }}" id="{{ opt.name|safe }}" class="form-control" placeholder="{{ opt.placeholder|safe or '' }}" {{ 'required' if opt.required }} {{ 'readonly' if opt.readonly }} {{ 'disabled' if opt.disabled }}>{% if opt.value %}{{ opt.value|safe }}{% endif %}</textarea>
+                {% endif %} 
                 {% endif %}
             </div>
         </div>
@@ -549,7 +628,7 @@
 <script>
 
     // relationshipjs start
-    $("#relationships_serialize").click(function(){
+    $(document).on('click', '#relationships_serialize', function(){
       var store = "";
         var x = $('#rform :input').serializeArray();
         console.log(x)
@@ -568,13 +647,13 @@
     });
 
 
-    $('#add_relationships').on('click', function() { 
+    $(document).on('click', '#add_relationships', function(){
         $('.relationships_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.relationships_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
@@ -582,7 +661,7 @@
 
 
     // sourcesjs start
-    $("#source_serialize").click(function(){
+    $(document).on('click', '#source_serialize', function(){
       var store = "";
         var x = $('#sform :input').serializeArray();
         console.log(x)
@@ -601,19 +680,19 @@
     });
 
 
-    $('#add_source').on('click', function() { 
+    $(document).on('click', '#add_source', function(){
         $('.source_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.source_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
 
     // processesjs start
-    $("#processes_serialize").click(function(){
+    $(document).on('click', '#processes_serialize', function(){
       var store = "";
         var x = $('#pform :input').serializeArray();
         console.log(x)
@@ -632,20 +711,20 @@
     });
 
 
-    $('#add_processes').on('click', function() { 
+    $(document).on('click', '#add_processes', function(){
         $('.processes_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.processes_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
 
 
     // querytermsjs start
-    $("#queryterm_serialize").click(function(){
+    $(document).on('click', '#queryterm_serialize', function(){
       var store = "";
         var x = $('#qform :input').serializeArray();
         console.log(x)
@@ -664,20 +743,19 @@
     });
 
 
-    $('#add_queryterm').on('click', function() { 
+    $(document).on('click', '#add_queryterm', function(){
         $('.queryterm_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.queryterm_field').on('click', '.remove', function() {
+    $('document').on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
 
-
     // licencesjs start
-    $("#license_serialize").click(function(){
+    $(document).on('click', '#license_serialize', function(){
       var store = "";
         var x = $('#lform :input').serializeArray();
         console.log(x)
@@ -696,19 +774,19 @@
     });
 
 
-    $('#add_license').on('click', function() { 
+    $(document).on('click', '#add_license', function(){
         $('.license_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.license_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
 
         // contributorsjs start
-    $("#contributor_serialize").click(function(){
+    $(document).on('click', '#contributor_serialize', function(){
       var store = "";
         var x = $('#cform :input').serializeArray();
         console.log(x)
@@ -727,20 +805,21 @@
     });
 
 
-    $('#add_contributor').on('click', function() { 
+    $(document).on('click', '#add_contributor', function(){
         $('.contributor_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.contributor_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
 
 
+
     // keywordjs start
-    $("#keyword_serialize").click(function(){
+    $(document).on('click', '#keyword_serialize', function(){
       var store = "";
         var x = $('#kform :input').serializeArray();
         console.log(x)
@@ -759,13 +838,13 @@
     });
 
 
-    $('#add_keyword').on('click', function() { 
+    $(document).on('click', '#add_keyword', function(){
         $('.keyword_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.keyword_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
@@ -773,7 +852,7 @@
     // notejs start
 
 
-    $("#note_serialize").click(function(){
+    $(document).on('click', '#note_serialize', function(){
       var store = "";
         var x = $('#nform :input').serializeArray();
         console.log(x)
@@ -792,16 +871,15 @@
     });
 
 
-    $('#add_note').on('click', function() { 
+    $(document).on('click', '#add_note', function(){
         $('.note_field').append('<div><input name="sadface" type="textarea"><button class="btn rip remove btn-lg btn-outline-editorial">X</button></div>');
       
         return false; //prevent form submission
     });
 
-    $('.note_field').on('click', '.remove', function() {
+    $(document).on('click', '.remove', function() {
         $(this).parent().remove();
         return false; //prevent form submission
     });
-
 </script>
 {% endblock main %}
