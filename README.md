@@ -11,3 +11,5 @@ This is an early-stage prototype for the WE1S WE1S Workflow Management System. I
 - tableschema_pandas (`pip install tableschema_pandas`)
 
 Once the app is running, there is a "To Do" page with a list of tasks for future development.
+
+For Documentation go to Here[https://github.com/CSUN-COMP587-F18/WE1S-Testing/blob/AnanDoh-docs-1/manifest-master/we1s-manifest-schema-2.0.md]
