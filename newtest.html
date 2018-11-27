@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <head>
+  	<style>
+	.entry:not(:first-of-type) {
+		margin-top: 10px;
+	}
+
+  	</style>
+  </head>
+  <body>
+
+    <label>authors</label>
+    <p>What Will be Submitted Is: <span id="demo"></span></p>
+	<form method="post" action="#" id="aform">
+	    <fieldset id="authors">
+	        <div class="author">
+	            <input type="text" name="author[]"><button class="remove">x</button>
+	        </div>
+	    </fieldset>	
+	            
+	    <button id="add_author">add author</button>
+	    
+	</form>
+	<button id="cereal">Serialize form values</button>
+    <script>
+		
+		$(document).ready(function(){
+		    $("#cereal").click(function(){
+		    	var store = "";
+		        var x = $("#aform").serializeArray();
+		        $.each(x, function(i, field){
+		           store = store +"" + field.value + "\n";
+		        });
+		        document.getElementById("demo").innerHTML = store;
+		        console.log(store);
+		    });
+		});
+		//Clone and Remove Form Fields
+		$('#add_author').on('click', function() { 
+		    $('#authors').append('<div class="author"><input type="text" name="author[]"><button class="remove">x</button></div>');
+		    var dataArray = $('#aform').serializeArray()
+		    console.log(dataArray)
+		    dataObj = {};
+			$(dataArray).each(function(i, field){
+			  dataObj[field.name] = field.value;
+			});
+			console.log(dataObj['author[]']);		    
+		    return false; //prevent form submission
+		});
+
+		$('#authors').on('click', '.remove', function() {
+		    $(this).parent().remove();
+		    return false; //prevent form submission
+		});	
+
+
+	</script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
